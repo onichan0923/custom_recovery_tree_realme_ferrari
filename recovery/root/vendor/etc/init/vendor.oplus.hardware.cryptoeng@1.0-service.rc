@@ -26,6 +26,7 @@ service hal_cryptoeng_oplus /system/bin/vendor.oplus.hardware.cryptoeng@1.0-serv
     class hal
     user root
     group root input sdcard_rw sdcard_r
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     disabled
     seclabel u:r:recovery:s0
     
