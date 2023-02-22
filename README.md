@@ -22,7 +22,7 @@
 * Flashing .Zip Files
 
 ### Issues and Bugs
-* External Storage (...tester don't own Micro SD and OTG, can't check.)
+* External Storage (...tester don't own OTG, can't check.)
 * Vibration/Haptics
 * MTP
 

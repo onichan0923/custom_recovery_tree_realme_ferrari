@@ -13,11 +13,9 @@
 /vbmeta_vendor         	emmc    /dev/block/bootdevice/by-name/vbmeta_vendor                        flags=display="VBMeta_Vendor";slotselect;backup=1;flashimg=1
 
 # External Partition
-/external_sd             auto      /dev/block/mmcblk1p1  /dev/block/mmcblk1                          flags=display="External Storage";storage;wipeingui;removable
 /usb_otg                 auto      /dev/block/sdg1    /dev/block/sdg          flags=display="USB Storage";storage;wipeingui;removable
 
 # Additional Partitions
-
 /apdp               emmc      /dev/block/bootdevice/by-name/apdp
 /devinfo            emmc      /dev/block/bootdevice/by-name/devinfo
 /aboot              emmc      /dev/block/bootdevice/by-name/aboot
