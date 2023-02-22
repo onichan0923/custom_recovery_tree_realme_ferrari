@@ -44,6 +44,16 @@ on late-fs
 on boot
     start health-hal-2-1
     start vendor.qti.vibrator 
+    
+on boot && property:ro.separate.soft=*
+    start switch_device_props
+
+service switch_device_props /system/bin/switch_device_props.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
 
 on post-fs
     start boot-hal-1-2
