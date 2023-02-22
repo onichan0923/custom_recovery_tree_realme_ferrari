@@ -156,7 +156,7 @@ TW_INCLUDE_RESETPROP := true
 TW_EXCLUDE_APEX := true
 TW_NO_FLASH_CURRENT_TWRP := true # For A/B devices that has dedicated recovery, removing that option in Advance.
 TW_NO_SCREEN_BLANK := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko msm_drm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko"
+TW_LOAD_VENDOR_MODULES := true
 
 # Maintainer/Version
 TW_DEVICE_VERSION := Crypton
