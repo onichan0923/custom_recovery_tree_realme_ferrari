@@ -143,6 +143,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_TOOLBOX := true
 TW_INCLUDE_NTFS_3G := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
