@@ -6,17 +6,25 @@
 | CPU                     | Octa-core (1x3.00 GHz Cortex-X2 & 3x2.50 GHz Cortex-A710 & 4x1.80 GHz Cortex-A510)  |
 | GPU                     | Adreno 730                                             |
 | Internal                | 128GB 8GB RAM, 256GB 8GB RAM, 256GB 12GB RAM, 512GB 12GB RAM, UFS 3.1                 |
-| Model                   | RMX3301, RMX3300 (RE547F) |
+| Model                   | RMX3301, RMX3300 |
 | Codename                | Macedonia (...unofficial codename.) |
 
 ### Release Notes
-* To be updated...
+* TWRP now boots, decryption is working fine but aren't tested in GSI.
+* Necessary blobs used here are from this OTA Firmware Dump: [RMX3301_11.C.13_1130_202301091837](https://gitlab.com/firmware-dump/android_dump_realme_RMX3301).
+* It was tested in a device running RUI 4.0 (RMX3301_11.C.13) firmware, but it should work in RUI3.0 too.
+* Realme GT2 Pro is Virtual A/B with dedicated Recovery Partition, no need to `boot` it like other A/Bs, just `flash` it.
 
 ### Working Features
-* To be updated...
+* Internal Storage
+* FastbootD
+* ADB Commands and Terminal
+* Flashing .Zip Files
 
 ### Issues and Bugs
-* To be updated...
+* External Storage (...tester don't own Micro SD and OTG, can't check.)
+* Vibration/Haptics
+* MTP
 
 ### Credits
 ```
