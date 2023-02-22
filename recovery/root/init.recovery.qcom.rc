@@ -29,20 +29,21 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
-    setprop sys.usb.configfs 1
+    setprop vendor.haptic.calibrate.done 1
 
-on property:ro.boot.usbcontroller=*
-    setprop sys.usb.controller ${ro.boot.usbcontroller}
-    wait /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode
-    write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode peripheral
-    wait /sys/class/udc/${ro.boot.usbcontroller} 1
+on late-init
+    write /sys/class/leds/vibrator/trigger "transient"
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+on late-fs
+    chmod 0666 /dev/awinic_haptic
+
 on boot
     start health-hal-2-1
+    start vendor.qti.vibrator 
 
 on post-fs
     start boot-hal-1-2
