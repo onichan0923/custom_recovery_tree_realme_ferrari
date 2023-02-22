@@ -32,6 +32,7 @@ TARGET_USES_REMOTEPROC := true
 BOARD_BOOTIMG_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := kernel
+BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_CONFIG := $(PRODUCT_DEVICE)_defconfig
 TARGET_KERNEL_SOURCE := kernel/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
@@ -85,8 +86,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libnetutils \
     libxml2 \
-    vendor.display.config@1.0 \
-    vendor.display.config@2.0
+    vendor.display.config@1.0
     
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
@@ -97,21 +97,23 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+BOARD_AVB_VBMETA_SYSTEM := system
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
 # Security Patch
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -145,10 +147,9 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_EXCLUDE_APEX := true
-TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-TW_QCOM_ATS_OFFSET := 1666528204500
 TW_NO_FLASH_CURRENT_TWRP := true # For A/B devices that has dedicated recovery, removing that option in Advance.
 TW_NO_SCREEN_BLANK := true
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko msm_drm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko"
 
 # Maintainer/Version
 TW_DEVICE_VERSION := Crypton

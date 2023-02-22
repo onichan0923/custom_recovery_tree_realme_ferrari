@@ -80,7 +80,7 @@ BOARD_SHIPPING_API_LEVEL := 31
 BOARD_API_LEVEL := 31
 SHIPPING_API_LEVEL := 31
 
-#Support to compile recovery without msm headers
+# Support to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 
 # Enable Fuse Passthrough
@@ -92,7 +92,6 @@ SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
-
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -101,3 +100,9 @@ TARGET_RECOVERY_DEVICE_MODULES += debuggerd
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
+
+# Copy for depmod
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(LOCAL_PATH)/prebuilt/vendor_modules,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules)
+
+# OTA Assert
+TARGET_OTA_ASSERT_DEVICE := RMX3301,RMX3300,RE547F,ossi,qssi
