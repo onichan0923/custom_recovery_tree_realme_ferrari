@@ -13,16 +13,21 @@
 * TWRP now boots, decryption is working fine but aren't tested in GSI.
 * Necessary blobs used here are from this OTA Firmware Dump: [RMX3301_11.C.13_1130_202301091837](https://gitlab.com/firmware-dump/android_dump_realme_RMX3301).
 * It was tested in a device running RUI 4.0 (RMX3301_11.C.13) firmware, but it should work in RUI3.0 too.
+* Do not flash OTA firmware yet, it is not well-tested, could brick your device.
 * Realme GT2 Pro is Virtual A/B with dedicated Recovery Partition, no need to `boot` it like other A/Bs, just `flash` it.
 
 ### Working Features
 * Internal Storage
 * FastbootD
 * ADB Commands and Terminal
-* Flashing .Zip Files
+* Flashing .zip files like magisk and recovery.
+* Flashing non-logical .img files.
+* ADB Sideload
 
 ### Issues and Bugs
 * External Storage (...tester don't own OTG, can't check.)
+* Flashing OTA.
+* Backup/Restore (...backup actually works, but restoring it not yet tested.)
 * Vibration/Haptics
 * MTP
 
