@@ -4,7 +4,7 @@
 
 LOCAL_PATH := device/realme/macedonia
 
-# A/B Post-Install
+# A/B Post-Instal Config
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -16,21 +16,15 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
-    
+
+# A/B OTA Partitions   
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    system \
-    system_ext \
-    product \
-    vendor \
-    vendor_dlkm \
-    vendor_boot \
-    vbmeta \
-    vbmeta_system \
-    vbemta_vendor \
-    boot \
-    dtbo \
-    odm
+AB_OTA_PARTITIONS ?= system system_ext product vendor vendor_dlkm vendor_boot vbmeta vbmeta_system vbemta_vendor boot dtbo odm
+TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+
+# Stock OEM OTA Cert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(COMMON_PATH)/security/local_OTA
 
 # Update Engine
 PRODUCT_PACKAGES += \
