@@ -159,7 +159,7 @@ TW_NO_SCREEN_BLANK := true
 TW_LOAD_VENDOR_MODULES := true
 
 # Maintainer/Version
-TW_DEVICE_VERSION := Crypton
+TW_DEVICE_VERSION := GT2Pro
 
 # Debugging Configs
 TWRP_INCLUDE_LOGCAT := true
