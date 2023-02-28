@@ -54,7 +54,7 @@ odm_dlkm                                                /odm_dlkm              e
 my_product         /my_product     ext4       ro,barrier=1       wait,slotselect,logical,first_stage_mount,nofail
 my_product         /my_product     erofs      ro                 wait,slotselect,logical,first_stage_mount,nofail
 my_engineering     /my_engineering ext4       ro,barrier=1       wait,slotselect,logical,first_stage_mount,nofail
-my_engineering     /mmy_engineering erofs      ro                 wait,slotselect,logical,first_stage_mount,nofail
+my_engineering     /my_engineering erofs      ro                 wait,slotselect,logical,first_stage_mount,nofail
 my_company         /my_company     ext4       ro,barrier=1       wait,slotselect,logical,first_stage_mount,nofail
 my_company         /my_company     erofs      ro                 wait,slotselect,logical,first_stage_mount,nofail
 my_carrier         /my_carrier     ext4       ro,barrier=1       wait,slotselect,logical,first_stage_mount,nofail
