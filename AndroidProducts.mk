@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_macedonia.mk
+    $(LOCAL_DIR)/twrp_ferrari.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_macedonia-user \
-    twrp_macedonia-userdebug \
-    twrp_macedonia-eng
+    twrp_ferrari-user \
+    twrp_ferrari-userdebug \
+    twrp_ferrari-eng

@@ -2,7 +2,7 @@
 # Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
 # SPDX-License-Identifier: Apache-2.0
 
-LOCAL_PATH := device/realme/macedonia
+LOCAL_PATH := device/realme/ferrari
 
 # A/B Post-Instal Config
 AB_OTA_POSTINSTALL_CONFIG += \
