@@ -1,7 +1,6 @@
 # Vibrator Service Init Filwe
 
 service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
-    class hal
     user root
     group root input
     setenv RICHTAP_DEVICE_PATH /dev/awinic_haptic

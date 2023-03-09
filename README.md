@@ -7,7 +7,7 @@
 | GPU                     | Adreno 730                                             |
 | Internal                | 128GB 8GB RAM, 256GB 8GB RAM, 256GB 12GB RAM, 512GB 12GB RAM, UFS 3.1                 |
 | Model                   | RMX3301, RMX3300 |
-| Codename                | Macedonia (...unofficial codename.) |
+| Codename                | Ferrari (...official codename.) |
 
 ### Release Notes
 * TWRP now boots, decryption is working fine but aren't tested in GSI.
@@ -23,13 +23,13 @@
 * Flashing .zip files like magisk and recovery.
 * Flashing non-logical .img files.
 * ADB Sideload
+* MTP
 
 ### Issues and Bugs
 * External Storage (...tester don't own OTG, can't check.)
 * Flashing OTA.
 * Backup/Restore (...backup actually works, but restoring it not yet tested.)
 * Vibration/Haptics
-* MTP
 
 ### Credits
 ```

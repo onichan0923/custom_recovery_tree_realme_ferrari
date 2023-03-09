@@ -4,6 +4,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),macedonia)
+ifeq ($(TARGET_DEVICE),ferrari)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

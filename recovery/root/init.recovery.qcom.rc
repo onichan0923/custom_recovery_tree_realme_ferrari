@@ -43,7 +43,8 @@ on late-fs
 
 on boot
     start health-hal-2-1
-    start vendor.qti.vibrator 
+    start vendor.qti.vibrator
+    start vendor.usb-hal-1-2
     
 on boot && property:ro.separate.soft=*
     start switch_device_props
