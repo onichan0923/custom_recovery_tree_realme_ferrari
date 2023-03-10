@@ -157,6 +157,7 @@ TW_EXCLUDE_APEX := true
 TW_NO_FLASH_CURRENT_TWRP := true # For A/B devices that has dedicated recovery, removing that option in Advance.
 TW_NO_SCREEN_BLANK := true
 TW_LOAD_VENDOR_MODULES := true
+TW_EXTRA_LANGUAGES := true
 
 # Maintainer/Version
 TW_DEVICE_VERSION := GT2Pro
